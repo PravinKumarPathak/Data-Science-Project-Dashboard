@@ -60,7 +60,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 # TASK 2:
 # Add a callback function for `site-dropdown` as input, `success-pie-chart` as output
 # Function decorator to specify function input and output
-@app.callback(Output(component_id='success-pie-chart',component_property='figure'),
+with app.app_context(Output(component_id='success-pie-chart',component_property='figure'),
             Input(component_id='site-dropdown', component_property='value'))
 
 def get_pie_chart(entered_site):
@@ -85,7 +85,7 @@ def get_pie_chart(entered_site):
 
 # TASK 3:
 # Add a callback function for `site-dropdown` and `payload-slider` as inputs, `success-payload-scatter-chart` as output
-@app.callback(Output(component_id='success-payload-scatter-chart', component_property='figure'),
+with app.app_context(Output(component_id='success-payload-scatter-chart', component_property='figure'),
             [Input(component_id='site-dropdown', component_property='value'), 
             Input(component_id="payload-slider", component_property="value")])
 
