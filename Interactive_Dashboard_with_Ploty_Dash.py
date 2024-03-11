@@ -1,8 +1,8 @@
 # Import required libraries
 import pandas as pd
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import html
+from dash import dcc
 from dash.dependencies import Input, Output
 import plotly.express as px
 
@@ -24,7 +24,7 @@ dropdown_options=[{'label':'All Sites','value':'All'},
 
 # Create a dash application
 app = dash.Dash(__name__)
-
+server=app.server
 
 # Create an app layout
 app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
