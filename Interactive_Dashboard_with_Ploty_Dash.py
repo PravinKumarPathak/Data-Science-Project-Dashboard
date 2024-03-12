@@ -24,7 +24,7 @@ dropdown_options=[{'label':'All Sites','value':'All'},
 
 # Create a dash application
 app = dash.Dash(__name__)
-#server=app.server
+server=app.server
 
 # Create an app layout
 app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
@@ -112,5 +112,4 @@ def get_scatter_chart(entered_site,payload):
 
 # Run the app
 if __name__ == '__main__':
-  app.run_server()
-    #app.run_server(debug=True)
+    app.run_server(debug=True)
